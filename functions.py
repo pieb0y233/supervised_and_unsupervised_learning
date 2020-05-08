@@ -318,7 +318,7 @@ def Hierarchical_Clustering(points,clusters_amount,metric):
     tmp_points=0
     #Remove_Cluster(data, c)
     while len(data)>clusters_amount:
-        D+=99999*np.eye(len(D))
+        D+=10*np.eye(len(D))
         #tmp_data=data.copy()
         #c=tmp_data[np.random.randint(len(data))]#argmax norm
         min_distance=99999
@@ -499,11 +499,11 @@ def Girvan_Newman(data):
             if((not(int(v[0])==int(next_point))) and (not(int(v[1])==int(next_point)))):
                 tmp_verticies.append(v)
         verticies=tmp_verticies
-    """
+
     for v in verticies:
         Plot_Line(v,data)
     plt.close()
-    """
+
     options=[]
     [options.append(verticies[ii][0]) for ii in range(len(verticies))]
     [options.append(verticies[ii][1]) for ii in range(len(verticies))]

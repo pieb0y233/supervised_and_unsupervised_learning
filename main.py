@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from functions import *
 from preprocessing import *
 import matplotlib.pyplot as plt

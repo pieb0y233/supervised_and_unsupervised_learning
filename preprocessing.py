@@ -20,7 +20,7 @@ def pearson_correlation(vec1,vec2):
 #print(pearson_correlation([0.5,0.7],[1,1.4]))
 #print("aa")
 
-percent=0.15
+percent=0.20
 def List_To_Dictionary(L):
     dic={}
     for i in range(len(L)):
