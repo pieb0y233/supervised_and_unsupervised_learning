@@ -1,5 +1,4 @@
 import numpy as np
-from data import *
 import pandas as pd
 import matplotlib.pyplot as plt
 np.random.seed(0)
