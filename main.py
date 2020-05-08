@@ -55,7 +55,7 @@ print("#    DATA AFTER PCA and CMDS")
 full_check(data_after_cmds,label_array)
 
 show(all_labels,0,1,data_after_cmds)
-#show(all_labels,1,2,data_after_cmds)#pretty nice
+#show(all_labels,1,2,data_after_cmds)
 
 
 
