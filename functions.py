@@ -1,4 +1,5 @@
 import numpy as np
+
 import pandas as pd
 import matplotlib.pyplot as plt
 np.random.seed(0)
@@ -121,8 +122,8 @@ def pca(x,kernel=No_kernel,param=0):
   n, m = data.shape
   Cov = kernel(data,param) / (n-1)
   eigen_vals, eigen_vecs = np.linalg.eig(Cov)
-  eigen_vals=np.real(eigen_vals)#[:372]
-  eigen_vecs=np.real(eigen_vecs)#[:372]
+  eigen_vals=np.real(eigen_vals)
+  eigen_vecs=np.real(eigen_vecs)
   w, = np.where(eigen_vals > 0.01)
   eigen_vecs = eigen_vecs[:,w]
   X_pca = np.dot(data,eigen_vecs)
@@ -320,27 +321,6 @@ def Hierarchical_Clustering(points,clusters_amount,metric):
         D+=10*np.eye(len(D))
         #tmp_data=data.copy()
         #c=tmp_data[np.random.randint(len(data))]#argmax norm
-        min_distance=99999
-        index1=0
-        index2=1
-        """
-        for i in range(len(data)-1):
-            for j in range(i+1,len(data),1):
-                dist=Centroid_Distance(data[i],data[j],c_point,metric)
-                if(dist<min_distance):
-                    min_distance=dist
-                    index1=i
-                    index2=j
-        """
-        """
-        for i in range(len(data)-1):
-            for j in range(i+1,len(data),1):
-                dist=D[i][j]
-                if(dist<min_distance):
-                    min_distance=dist
-                    index1=i
-                    index2=j
-        """
         n=np.argmin(D)
         index1=int(n/len(D))
         index2=n-index1*len(D)
@@ -403,12 +383,6 @@ def shortest_path_graph(points,metric):
         closest_point2=np.argmin(dist)
         if(connect2(i,closest_point2,verticies)):
             verticies.append([i,closest_point2])
-        """
-        dist[np.argmin(dist)]=999999999
-        closest_point3=np.argmin(dist)
-        if(connect2(i,closest_point3,verticies)):
-            verticies.append([i,closest_point3])
-        """
     return verticies
 
 
@@ -460,16 +434,7 @@ def dikstra_with_path(start,points,verticies,metric):
 def Plot_Line(line,points):
     plt.plot([points[line[0]][0],points[line[1]][0]],[points[line[0]][1],points[line[1]][1]],"b")
     plt.plot([points[line[0]][0], points[line[1]][0]], [points[line[0]][1], points[line[1]][1]], "ro")
-"""
-for i in range(len(verticies)):
-    Plot_Line(verticies[i])
-plt.close()
 
-for i in range(len(verticies)):
-    plt.plot([verticies[i][0][0],verticies[i][1][0]],[verticies[i][0][1],verticies[i][1][1]],"b")
-    plt.plot([verticies[i][0][0],verticies[i][1][0]],[verticies[i][0][1],verticies[i][1][1]],"ro")
-plt.show()
-"""
 def in_betweeness(edges,verticies,metric,removed):
     scores={i:0 for i in range(len(edges))}
     options=list(range(len(edges)))

@@ -87,8 +87,9 @@ doubles=[14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 36, 37, 43,
 [all_keys.pop(i) for i in sorted(list(set(doubles)))[::-1]]
 df=df[all_keys]
 
+
 a=[np.array(data[i]) for i in range(len(data))]
-db_vec=db_Scan(a,Eulician_Metric,2500)#5000
+db_vec=db_Scan(a,Eulician_Metric,305000)
 print("")
 print("db scan!")
 print("")

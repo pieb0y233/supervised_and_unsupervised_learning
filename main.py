@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from functions import *
 from preprocessing import *
 import matplotlib.pyplot as plt
@@ -44,86 +43,21 @@ data_array=zero_centered(np.array(data))
 label_array=np.array(labels)
 all_labels=sorted(list(set(label_array)))
 
-"""
+
 data_after_pca=pca(data_array)
-#show(all_labels,0,1,data_after_pca)#nice
-print("#    DATA AFTER PCA")
-full_check(data_after_pca,label_array)
 
-data_after_pca=pca(data_array,Gaussian_kernel,2)
 #show(all_labels,0,1,data_after_pca)
-print("#    DATA AFTER Gaussian_kernel PCA")
+print("#    DATA AFTER Polynomial_kernel 1 PCA")
 full_check(data_after_pca,label_array)
-
-data_after_pca=pca(data_array,Polynomial_kernel,4)
-#show(all_labels,0,1,data_after_pca)
-print("#    DATA AFTER Polynomial_kernel 4 PCA")
-full_check(data_after_pca,label_array)
-
-data_after_pca=pca(data_array,Polynomial_kernel,3)
-#show(all_labels,0,1,data_after_pca)
-print("#    DATA AFTER Polynomial_kernel 3 PCA")
-full_check(data_after_pca,label_array)
-
-data_after_pca=pca(data_array,Polynomial_kernel,2)
-#show(all_labels,0,1,data_after_pca)
-print("#    DATA AFTER Polynomial_kernel 2 PCA")
-full_check(data_after_pca,label_array)
-"""
-data_after_pca=pca(data_array,Polynomial_kernel,1)
-#show(all_labels,0,1,data_after_pca)
-#print("#    DATA AFTER Polynomial_kernel 1 PCA")
-#full_check(data_after_pca,label_array)
 
 data_after_cmds,b=cmdscale(data_after_pca,Eulician_Metric)
-print("#    DATA AFTER Polynomial_kernel 1 PCA and CMDS")
-full_check(data_after_pca,label_array)
-
-#show(all_labels,0,1,data_after_cmds)#pretty nice
-#show(all_labels,0,2,data_after_cmds)#pretty nice
-#show(all_labels,1,2,data_after_cmds)#pretty nice
-#show(all_labels,2,3,data_after_cmds)#pretty nice
-
-
-
-"""
-data_after_cmds,b=cmdscale(data_array,Eulician_Metric)
-show(all_labels,0,1,data_after_cmds)#pretty nice
-show(all_labels,1,2,data_after_cmds)#pretty nice
-show(all_labels,0,2,data_after_cmds)#pretty nice
-#data_after_pca=pca(data_after_cmds)
-#show(all_labels,0,1,data_after_pca)
-data_after_pca=pca(data_after_cmds,Gaussian_kernel,2)
-show(all_labels,0,1,data_after_pca1)
-data_after_pca=pca(data_after_cmds,Gaussian_kernel,1)
-show(all_labels,0,1,data_after_pca1)
-data_after_pca=pca(data_after_cmds,Gaussian_kernel,-2)
-show(all_labels,0,1,data_after_pca1)
-data_after_pca=pca(data_after_cmds,Polynomial_kernel,1)
-show(all_labels,0,1,data_after_pca)
-"""
-
-#a=pca(data_after_cmds,Gaussian_kernel,1)
-#a=pca(data_array,Polynomial_kernel,1)
-#a,b=cmdscale(a,Eulician_Metric)
-
-#a=data_after_pca
-#a=data_after_cmds
-
-"""
-print("#    DATA AFTER PCA")
-full_check(data_after_pca,label_array)
-print("#    DATA AFTER CMDS")
+print("#    DATA AFTER PCA and CMDS")
 full_check(data_after_cmds,label_array)
-"""
+
+show(all_labels,0,1,data_after_cmds)
+#show(all_labels,1,2,data_after_cmds)#pretty nice
 
 
-
-#show(all_labels,0,1,a)
-#show(all_labels,0,2,a)
-#show(all_labels,1,2,a)
-
-#a,b=cmdscale(np.array(df),Eulician_Metric)
 
 
 print("End of main.py")
